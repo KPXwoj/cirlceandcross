@@ -108,6 +108,12 @@
                                             <action selector="leftUpClicked:" destination="52H-mA-fTj" eventType="touchUpInside" id="gqD-R3-pOC"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXN-Va-VnT">
+                                        <rect key="frame" x="102" y="103" width="95" height="95"/>
+                                        <connections>
+                                            <action selector="centerMiddleClicked:" destination="52H-mA-fTj" eventType="touchUpInside" id="1KB-KT-RE2"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfR-zQ-qwb">
                                         <rect key="frame" x="0.0" y="105" width="100" height="95"/>
                                         <connections>
@@ -165,12 +171,6 @@
                                     <constraint firstItem="f6e-pA-BHP" firstAttribute="centerX" secondItem="8oE-HY-Z5O" secondAttribute="centerX" id="wng-A0-9Un"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXN-Va-VnT">
-                                <rect key="frame" x="255" y="255" width="95" height="95"/>
-                                <connections>
-                                    <action selector="centerMiddleClicked:" destination="52H-mA-fTj" eventType="touchUpInside" id="1KB-KT-RE2"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

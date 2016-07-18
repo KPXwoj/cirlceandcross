@@ -16,22 +16,19 @@ class GameController: UIViewController {
     }
     
     
-//  The variables with the area of game
-    @IBOutlet weak var LEFT_UP: UIView!
-    @IBOutlet weak var MIDDLE_UP: UIView!
-    @IBOutlet weak var RIGHT_UP: UIView!
-    @IBOutlet weak var LEFT_MIDDLE: UIView!
-    @IBOutlet weak var MIDDLE_MIDDLE: UIView!
-    @IBOutlet weak var RIGHT_MIDDLE: UIView!
-    @IBOutlet weak var LEFT_DOWN: UIView!
-    @IBOutlet weak var MIDDLE_DOWN: UIView!
-    @IBOutlet weak var RIGHT_DOWN: UIView!
+//  The variables with the button of game
+    @IBOutlet weak var left_up: UIButton!
+    @IBOutlet weak var center_up: UIButton!
+    @IBOutlet weak var right_up: UIButton!
+    @IBOutlet weak var left_middle: UIButton!
+    @IBOutlet weak var center_middle: UIButton!
+    @IBOutlet weak var right_middle: UIButton!
+    @IBOutlet weak var left_down: UIButton!
+    @IBOutlet weak var center_down: UIButton!
+    @IBOutlet weak var right_down: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-    }
+
+    
     
     
     

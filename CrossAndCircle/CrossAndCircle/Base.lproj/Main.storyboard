@@ -104,27 +104,51 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZD-dV-bXO">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <connections>
+                                            <action selector="leftUpClicked:" destination="52H-mA-fTj" eventType="touchUpInside" id="gqD-R3-pOC"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfR-zQ-qwb">
                                         <rect key="frame" x="0.0" y="105" width="100" height="95"/>
+                                        <connections>
+                                            <action selector="leftMiddleClicked:" destination="52H-mA-fTj" eventType="touchUpInside" id="qkY-0p-aNI"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYv-Qh-6ox">
                                         <rect key="frame" x="0.0" y="205" width="100" height="95"/>
+                                        <connections>
+                                            <action selector="leftDownClicked:" destination="52H-mA-fTj" eventType="touchUpInside" id="HYt-It-RXP"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvK-Yu-jK4">
                                         <rect key="frame" x="205" y="205" width="95" height="95"/>
+                                        <connections>
+                                            <action selector="rightDownClicked:" destination="52H-mA-fTj" eventType="touchUpInside" id="p5D-Mq-Mpa"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8V-c4-j9P">
                                         <rect key="frame" x="205" y="0.0" width="95" height="100"/>
+                                        <connections>
+                                            <action selector="rightUpClicked:" destination="52H-mA-fTj" eventType="touchUpInside" id="WRw-zN-vgr"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGD-sQ-fhc">
                                         <rect key="frame" x="105" y="0.0" width="95" height="100"/>
+                                        <connections>
+                                            <action selector="centerUpClicked:" destination="52H-mA-fTj" eventType="touchUpInside" id="PY2-34-wia"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7d-Nc-UaA">
                                         <rect key="frame" x="205" y="105" width="95" height="95"/>
+                                        <connections>
+                                            <action selector="rightMiddleClicked:" destination="52H-mA-fTj" eventType="touchUpInside" id="exS-Qz-Ss2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PyL-Jf-QUI">
                                         <rect key="frame" x="105" y="205" width="95" height="95"/>
+                                        <connections>
+                                            <action selector="centerDownClicked:" destination="52H-mA-fTj" eventType="touchUpInside" id="yCi-3P-b9z"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -143,6 +167,9 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXN-Va-VnT">
                                 <rect key="frame" x="255" y="255" width="95" height="95"/>
+                                <connections>
+                                    <action selector="centerMiddleClicked:" destination="52H-mA-fTj" eventType="touchUpInside" id="1KB-KT-RE2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

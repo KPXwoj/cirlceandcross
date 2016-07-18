@@ -17,7 +17,6 @@ class GameController: UIViewController {
     
     var currentTypeOfMove = MoveType.Circle
     
-    
 //  The variables with the buttons of game
     @IBOutlet weak var left_up: UIButton!
     @IBOutlet weak var center_up: UIButton!
@@ -28,6 +27,7 @@ class GameController: UIViewController {
     @IBOutlet weak var left_down: UIButton!
     @IBOutlet weak var center_down: UIButton!
     @IBOutlet weak var right_down: UIButton!
+
     
 //  Functions of action on clicked the buttons
     @IBAction func leftUpClicked(sender: AnyObject) {
@@ -67,6 +67,12 @@ class GameController: UIViewController {
         checkWinner()
     }
     
+//  New Game Button Clicked
+    @IBAction func newgameClicked(sender: AnyObject) {
+        getStartedNewGame()
+    }
+    
+    
 //  The function shows the x or o on the area
     func showSymbolOfMove(ClickedButton: UIButton) {
         switch currentTypeOfMove {
@@ -89,12 +95,13 @@ class GameController: UIViewController {
         }
     }
     
+    
 //  Sets background for winner areas
     func setBackgroundOfWinnerButtons(WonButtons: UIButton ...) {
         for button in WonButtons {
             button.backgroundColor = UIColor.greenColor()
         }
-        print("set background")
+        disabledButtons()
     }
     
 //  Rules of game
@@ -145,6 +152,36 @@ class GameController: UIViewController {
             setBackgroundOfWinnerButtons(left_down, center_middle, right_up)
         } else if left_down.currentTitle == "O" && center_middle.currentTitle == "O" && right_up.currentTitle == "O" {
             setBackgroundOfWinnerButtons(left_down, center_middle, right_up)
+        }
+    }
+    
+    func disabledButtons() {
+        left_up.userInteractionEnabled = false
+        left_middle.userInteractionEnabled = false
+        left_down.userInteractionEnabled = false
+        center_up.userInteractionEnabled = false
+        center_middle.userInteractionEnabled = false
+        center_down.userInteractionEnabled = false
+        right_up.userInteractionEnabled = false
+        right_middle.userInteractionEnabled = false
+        right_down.userInteractionEnabled = false
+    }
+    
+    func getStartedNewGame() {
+        left_up.titleLabel!.text = nil
+        left_middle.titleLabel!.text = nil
+        left_down.titleLabel!.text = nil
+        center_up.titleLabel!.text = nil
+        center_middle.titleLabel!.text = nil
+        center_down.titleLabel!.text = nil
+        right_up.titleLabel!.text = nil
+        right_middle.titleLabel!.text = nil
+        right_down.titleLabel!.text = nil
+    
+        let gameAreas = [left_up, left_middle, left_down, center_up, center_middle, center_down, right_up, right_middle,right_down]
+        
+        for area in gameAreas {
+            area.backgroundColor = UIColor.whiteColor()
         }
     }
     

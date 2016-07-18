@@ -71,6 +71,7 @@ class GameController: UIViewController {
         
     }
     
+//  The function checks an area, it is nil
     func checkArea(ClickedButton: UIButton) {
         if ClickedButton.currentTitle == nil {
             showSymbolOfMove(ClickedButton)
@@ -79,6 +80,73 @@ class GameController: UIViewController {
         }
     }
     
-    
+    func checkWinner() {
+        if left_up.currentTitle == "X" && center_up.currentTitle == "X" && right_up.currentTitle == "X" {
+            
+        } else if left_up.currentTitle == "O" && center_up.currentTitle == "O" && right_up.currentTitle == "O" {
+            
+        }
+        
+        if left_middle.currentTitle == "X" && center_middle.currentTitle == "X" && right_middle.currentTitle == "X" {
+            
+        } else if left_middle.currentTitle == "O" && center_middle.currentTitle == "O" && right_middle.currentTitle == "O" {
+            
+        }
+        
+        if left_down.currentTitle == "X" && center_down.currentTitle == "X" && right_down.currentTitle == "X" {
+            
+        } else if left_down.currentTitle == "O" && center_down.currentTitle == "O" && right_down.currentTitle == "O" {
+            
+        }
+        
+        if left_down.currentTitle == "X" && left_middle.currentTitle == "X" && left_up.currentTitle == "X" {
+            
+        } else if left_down.currentTitle == "O" && left_middle.currentTitle == "O" && left_up.currentTitle == "O" {
+            
+        }
+        
+        if center_down.currentTitle == "X" && center_middle.currentTitle == "X" && center_up.currentTitle == "X" {
+            
+        } else if center_down.currentTitle == "O" && center_middle.currentTitle == "O" && center_up.currentTitle == "O" {
+            
+        }
+        
+        if right_up.currentTitle == "X" && right_down.currentTitle == "X" && right_middle.currentTitle == "X" {
+            
+        } else if right_up.currentTitle == "O" && right_down.currentTitle == "O" && right_middle.currentTitle == "O" {
+            
+        }
+        
+        if left_up.currentTitle == "X" && center_middle.currentTitle == "X" && right_down.currentTitle == "X" {
+            
+        } else if left_up.currentTitle == "O" && center_middle.currentTitle == "O" && right_down.currentTitle == "O" {
+            
+        }
+        
+        if left_down.currentTitle == "X" && center_middle.currentTitle == "X" && right_up.currentTitle == "X" {
+            
+        } else if left_down.currentTitle == "O" && center_middle.currentTitle == "O" && right_up.currentTitle == "O" {
+            
+        }
+    }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

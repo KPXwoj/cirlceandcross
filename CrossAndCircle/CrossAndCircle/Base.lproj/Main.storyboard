@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="502" y="435"/>
         </scene>
-        <!--Title-->
+        <!--Cross & Circle-->
         <scene sceneID="O8U-PV-M1b">
             <objects>
-                <viewController id="52H-mA-fTj" sceneMemberID="viewController">
+                <viewController id="52H-mA-fTj" customClass="GameController" customModule="CrossAndCircle" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="acc-X2-yXG"/>
                         <viewControllerLayoutGuide type="bottom" id="D1x-m2-0Qk"/>
@@ -126,16 +126,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epo-Eb-I20">
-                                        <rect key="frame" x="0.0" y="105" width="100" height="95"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oWX-Ky-ys9">
                                         <rect key="frame" x="105" y="105" width="95" height="95"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEj-lG-6Zs">
                                         <rect key="frame" x="205" y="105" width="95" height="95"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epo-Eb-I20">
+                                        <rect key="frame" x="0.0" y="105" width="100" height="95"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -196,7 +196,18 @@
                             <constraint firstItem="8oE-HY-Z5O" firstAttribute="centerY" secondItem="upC-Fc-6aW" secondAttribute="centerY" id="Knn-O7-AvM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="I4r-8o-uth"/>
+                    <navigationItem key="navigationItem" title="Cross &amp; Circle" id="I4r-8o-uth"/>
+                    <connections>
+                        <outlet property="LEFT_DOWN" destination="afJ-DS-YBy" id="NU1-Az-SpD"/>
+                        <outlet property="LEFT_MIDDLE" destination="epo-Eb-I20" id="s6p-Rp-dv3"/>
+                        <outlet property="LEFT_UP" destination="E6Q-wE-S4y" id="OBd-Oo-wRP"/>
+                        <outlet property="MIDDLE_DOWN" destination="de3-LW-QTB" id="HTL-2h-hng"/>
+                        <outlet property="MIDDLE_MIDDLE" destination="oWX-Ky-ys9" id="No6-cM-dtB"/>
+                        <outlet property="MIDDLE_UP" destination="kic-R5-bw2" id="RX0-W0-gdT"/>
+                        <outlet property="RIGHT_DOWN" destination="gAO-4H-bep" id="CG7-E2-cZE"/>
+                        <outlet property="RIGHT_MIDDLE" destination="sEj-lG-6Zs" id="y5n-Xv-z7e"/>
+                        <outlet property="RIGHT_UP" destination="5mq-Sf-LSh" id="hC0-Xt-vfV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Chq-BS-lF1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

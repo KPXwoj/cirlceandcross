@@ -31,31 +31,31 @@ class GameController: UIViewController {
     
 //  Functions of action on clicked the buttons
     @IBAction func leftUpClicked(sender: AnyObject) {
-        showSymbolOfMove(left_up)
+        checkArea(left_up)
     }
     @IBAction func centerUpClicked(sender: AnyObject) {
-        showSymbolOfMove(center_up)
+        checkArea(center_up)
     }
     @IBAction func rightUpClicked(sender: AnyObject) {
-        showSymbolOfMove(right_up)
+        checkArea(right_up)
     }
     @IBAction func leftMiddleClicked(sender: AnyObject) {
-        showSymbolOfMove(left_middle)
+        checkArea(left_middle)
     }
     @IBAction func centerMiddleClicked(sender: AnyObject) {
-        showSymbolOfMove(center_middle)
+        checkArea(center_middle)
     }
     @IBAction func rightMiddleClicked(sender: AnyObject) {
-        showSymbolOfMove(right_middle)
+        checkArea(right_middle)
     }
     @IBAction func leftDownClicked(sender: AnyObject) {
-        showSymbolOfMove(left_down)
+        checkArea(left_down)
     }
     @IBAction func centerDownClicked(sender: AnyObject) {
-        showSymbolOfMove(center_down)
+        checkArea(center_down)
     }
     @IBAction func rightDownClicked(sender: AnyObject) {
-        showSymbolOfMove(right_down)
+        checkArea(right_down)
     }
     
 //  The function shows the x or o on the area
@@ -63,10 +63,20 @@ class GameController: UIViewController {
         switch currentTypeOfMove {
         case .Circle:
             ClickedButton.setTitle("X", forState: .Normal)
+            currentTypeOfMove = .Cross
         case .Cross:
             ClickedButton.setTitle("O", forState: .Normal)
+            currentTypeOfMove = .Circle
         }
         
+    }
+    
+    func checkArea(ClickedButton: UIButton) {
+        if ClickedButton.currentTitle == nil {
+            showSymbolOfMove(ClickedButton)
+        } else {
+            print("This area is already taken")
+        }
     }
     
     

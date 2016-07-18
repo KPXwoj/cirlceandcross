@@ -10,6 +10,11 @@ import UIKit
 
 class GameController: UIViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        resetButtonsTitle()
+    }
+    
 //  Set two types of move, which can do player
     enum MoveType {
         case Circle, Cross
@@ -88,7 +93,7 @@ class GameController: UIViewController {
     
 //  The function checks an area, it is nil
     func checkArea(ClickedButton: UIButton) {
-        if ClickedButton.currentTitle == nil {
+        if ClickedButton.currentTitle == "" {
             showSymbolOfMove(ClickedButton)
         } else {
             print("This area is already taken")
@@ -173,7 +178,7 @@ class GameController: UIViewController {
         left_up.userInteractionEnabled = true
         left_middle.userInteractionEnabled = true
         left_down.userInteractionEnabled = true
-        center_up.userInteractionEnabled = false
+        center_up.userInteractionEnabled = true
         center_middle.userInteractionEnabled = true
         center_down.userInteractionEnabled = true
         right_up.userInteractionEnabled = true
@@ -183,42 +188,31 @@ class GameController: UIViewController {
     
 //  Creator of new game
     func getStartedNewGame() {
-        left_up.titleLabel!.text = nil
-        left_middle.titleLabel!.text = nil
-        left_down.titleLabel!.text = nil
-        center_up.titleLabel!.text = nil
-        center_middle.titleLabel!.text = nil
-        center_down.titleLabel!.text = nil
-        right_up.titleLabel!.text = nil
-        right_middle.titleLabel!.text = nil
-        right_down.titleLabel!.text = nil
     
+        resetButtonsTitle()
+        
         let gameAreas = [left_up, left_middle, left_down, center_up, center_middle, center_down, right_up, right_middle,right_down]
         
         for area in gameAreas {
             area.backgroundColor = UIColor.whiteColor()
         }
         
+        currentTypeOfMove = .Circle
+        
         eneblingButtons()
     }
     
+    func resetButtonsTitle() {
+        left_up.setTitle("", forState: .Normal)
+        left_middle.setTitle("", forState: .Normal)
+        left_down.setTitle("", forState: .Normal)
+        center_up.setTitle("", forState: .Normal)
+        center_middle.setTitle("", forState: .Normal)
+        center_down.setTitle("", forState: .Normal)
+        right_up.setTitle("", forState: .Normal)
+        right_middle.setTitle("", forState: .Normal)
+        right_down.setTitle("", forState: .Normal)
+    }
+    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

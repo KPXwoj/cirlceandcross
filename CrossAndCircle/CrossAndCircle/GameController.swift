@@ -32,30 +32,39 @@ class GameController: UIViewController {
 //  Functions of action on clicked the buttons
     @IBAction func leftUpClicked(sender: AnyObject) {
         checkArea(left_up)
+        checkWinner()
     }
     @IBAction func centerUpClicked(sender: AnyObject) {
         checkArea(center_up)
+        checkWinner()
     }
     @IBAction func rightUpClicked(sender: AnyObject) {
         checkArea(right_up)
+        checkWinner()
     }
     @IBAction func leftMiddleClicked(sender: AnyObject) {
         checkArea(left_middle)
+        checkWinner()
     }
     @IBAction func centerMiddleClicked(sender: AnyObject) {
         checkArea(center_middle)
+        checkWinner()
     }
     @IBAction func rightMiddleClicked(sender: AnyObject) {
         checkArea(right_middle)
+        checkWinner()
     }
     @IBAction func leftDownClicked(sender: AnyObject) {
         checkArea(left_down)
+        checkWinner()
     }
     @IBAction func centerDownClicked(sender: AnyObject) {
         checkArea(center_down)
+        checkWinner()
     }
     @IBAction func rightDownClicked(sender: AnyObject) {
         checkArea(right_down)
+        checkWinner()
     }
     
 //  The function shows the x or o on the area
@@ -80,53 +89,62 @@ class GameController: UIViewController {
         }
     }
     
+//  Sets background for winner areas
+    func setBackgroundOfWinnerButtons(WonButtons: UIButton ...) {
+        for button in WonButtons {
+            button.backgroundColor = UIColor.greenColor()
+        }
+        print("set background")
+    }
+    
+//  Rules of game
     func checkWinner() {
         if left_up.currentTitle == "X" && center_up.currentTitle == "X" && right_up.currentTitle == "X" {
-            
+            setBackgroundOfWinnerButtons(left_up, center_up, right_up)
         } else if left_up.currentTitle == "O" && center_up.currentTitle == "O" && right_up.currentTitle == "O" {
-            
+            setBackgroundOfWinnerButtons(left_up, center_up, right_up)
         }
         
         if left_middle.currentTitle == "X" && center_middle.currentTitle == "X" && right_middle.currentTitle == "X" {
-            
+            setBackgroundOfWinnerButtons(left_middle, center_middle, right_middle)
         } else if left_middle.currentTitle == "O" && center_middle.currentTitle == "O" && right_middle.currentTitle == "O" {
-            
+            setBackgroundOfWinnerButtons(left_middle, center_middle, right_middle)
         }
         
         if left_down.currentTitle == "X" && center_down.currentTitle == "X" && right_down.currentTitle == "X" {
-            
+            setBackgroundOfWinnerButtons(left_down, center_down, right_down)
         } else if left_down.currentTitle == "O" && center_down.currentTitle == "O" && right_down.currentTitle == "O" {
-            
+            setBackgroundOfWinnerButtons(left_down, center_down, right_down)
         }
         
         if left_down.currentTitle == "X" && left_middle.currentTitle == "X" && left_up.currentTitle == "X" {
-            
+            setBackgroundOfWinnerButtons(left_down, left_middle, left_up)
         } else if left_down.currentTitle == "O" && left_middle.currentTitle == "O" && left_up.currentTitle == "O" {
-            
+            setBackgroundOfWinnerButtons(left_down, left_middle, left_up)
         }
         
         if center_down.currentTitle == "X" && center_middle.currentTitle == "X" && center_up.currentTitle == "X" {
-            
+            setBackgroundOfWinnerButtons(center_down, center_middle, center_up)
         } else if center_down.currentTitle == "O" && center_middle.currentTitle == "O" && center_up.currentTitle == "O" {
-            
+            setBackgroundOfWinnerButtons(center_down, center_middle, center_up)
         }
         
         if right_up.currentTitle == "X" && right_down.currentTitle == "X" && right_middle.currentTitle == "X" {
-            
+            setBackgroundOfWinnerButtons(right_up, right_down, right_middle)
         } else if right_up.currentTitle == "O" && right_down.currentTitle == "O" && right_middle.currentTitle == "O" {
-            
+            setBackgroundOfWinnerButtons(right_up, right_down, right_middle)
         }
         
         if left_up.currentTitle == "X" && center_middle.currentTitle == "X" && right_down.currentTitle == "X" {
-            
+            setBackgroundOfWinnerButtons(left_up, center_middle, right_down)
         } else if left_up.currentTitle == "O" && center_middle.currentTitle == "O" && right_down.currentTitle == "O" {
-            
+            setBackgroundOfWinnerButtons(left_up, center_middle, right_down)
         }
         
         if left_down.currentTitle == "X" && center_middle.currentTitle == "X" && right_up.currentTitle == "X" {
-            
+            setBackgroundOfWinnerButtons(left_down, center_middle, right_up)
         } else if left_down.currentTitle == "O" && center_middle.currentTitle == "O" && right_up.currentTitle == "O" {
-            
+            setBackgroundOfWinnerButtons(left_down, center_middle, right_up)
         }
     }
     

@@ -155,6 +155,7 @@ class GameController: UIViewController {
         }
     }
     
+//  Disabled buttons
     func disabledButtons() {
         left_up.userInteractionEnabled = false
         left_middle.userInteractionEnabled = false
@@ -167,6 +168,20 @@ class GameController: UIViewController {
         right_down.userInteractionEnabled = false
     }
     
+//  Enenbled buttons
+    func eneblingButtons() {
+        left_up.userInteractionEnabled = true
+        left_middle.userInteractionEnabled = true
+        left_down.userInteractionEnabled = true
+        center_up.userInteractionEnabled = false
+        center_middle.userInteractionEnabled = true
+        center_down.userInteractionEnabled = true
+        right_up.userInteractionEnabled = true
+        right_middle.userInteractionEnabled = true
+        right_down.userInteractionEnabled = true
+    }
+    
+//  Creator of new game
     func getStartedNewGame() {
         left_up.titleLabel!.text = nil
         left_middle.titleLabel!.text = nil
@@ -183,6 +198,8 @@ class GameController: UIViewController {
         for area in gameAreas {
             area.backgroundColor = UIColor.whiteColor()
         }
+        
+        eneblingButtons()
     }
     
 }

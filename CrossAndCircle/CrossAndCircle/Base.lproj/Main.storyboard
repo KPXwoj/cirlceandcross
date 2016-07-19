@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="height" constant="36" id="ubM-fz-T01"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0j3-H2-wXg">
@@ -280,13 +280,21 @@
                                     <action selector="newgameClicked:" destination="52H-mA-fTj" eventType="touchUpInside" id="cnr-Lv-pL9"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info about the winner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TaS-PW-1RH">
+                                <rect key="frame" x="169" y="94" width="262" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="24"/>
+                                <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0Im-km-VL6" firstAttribute="centerX" secondItem="upC-Fc-6aW" secondAttribute="centerX" id="7u5-Fq-so8"/>
                             <constraint firstItem="8oE-HY-Z5O" firstAttribute="centerX" secondItem="upC-Fc-6aW" secondAttribute="centerX" id="8Wd-OB-g5Z"/>
                             <constraint firstItem="D1x-m2-0Qk" firstAttribute="top" secondItem="0Im-km-VL6" secondAttribute="bottom" constant="10" id="GmE-iG-Gcs"/>
+                            <constraint firstItem="TaS-PW-1RH" firstAttribute="top" secondItem="acc-X2-yXG" secondAttribute="bottom" constant="30" id="KfY-Bb-blk"/>
                             <constraint firstItem="8oE-HY-Z5O" firstAttribute="centerY" secondItem="upC-Fc-6aW" secondAttribute="centerY" id="Knn-O7-AvM"/>
+                            <constraint firstItem="TaS-PW-1RH" firstAttribute="centerX" secondItem="upC-Fc-6aW" secondAttribute="centerX" id="Ljx-IM-CR7"/>
                             <constraint firstItem="D1x-m2-0Qk" firstAttribute="top" secondItem="0Im-km-VL6" secondAttribute="bottom" constant="50" id="tgg-FM-8U8"/>
                         </constraints>
                         <variation key="default">
@@ -314,6 +322,7 @@
                         <outlet property="right_down" destination="zvK-Yu-jK4" id="lB0-so-FDS"/>
                         <outlet property="right_middle" destination="C7d-Nc-UaA" id="Kkp-xo-Hbz"/>
                         <outlet property="right_up" destination="X8V-c4-j9P" id="XT6-dx-san"/>
+                        <outlet property="winner_text" destination="TaS-PW-1RH" id="zzk-Sy-H7L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Chq-BS-lF1" userLabel="First Responder" sceneMemberID="firstResponder"/>

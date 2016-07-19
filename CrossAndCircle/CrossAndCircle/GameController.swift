@@ -10,10 +10,6 @@ import UIKit
 
 class GameController: UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        resetButtonsTitle()
-    }
     
 //  Set two types of move, which can do player
     enum MoveType {
@@ -32,7 +28,9 @@ class GameController: UIViewController {
     @IBOutlet weak var left_down: UIButton!
     @IBOutlet weak var center_down: UIButton!
     @IBOutlet weak var right_down: UIButton!
-
+    
+//  Text which infos who won
+    @IBOutlet weak var winner_text: UILabel!
     
 //  Functions of action on clicked the buttons
     @IBAction func leftUpClicked(sender: AnyObject) {
@@ -113,50 +111,66 @@ class GameController: UIViewController {
     func checkWinner() {
         if left_up.currentTitle == "X" && center_up.currentTitle == "X" && right_up.currentTitle == "X" {
             setBackgroundOfWinnerButtons(left_up, center_up, right_up)
+            showWhoWon(.Cross)
         } else if left_up.currentTitle == "O" && center_up.currentTitle == "O" && right_up.currentTitle == "O" {
             setBackgroundOfWinnerButtons(left_up, center_up, right_up)
+            showWhoWon(.Circle)
         }
         
         if left_middle.currentTitle == "X" && center_middle.currentTitle == "X" && right_middle.currentTitle == "X" {
             setBackgroundOfWinnerButtons(left_middle, center_middle, right_middle)
+            showWhoWon(.Cross)
         } else if left_middle.currentTitle == "O" && center_middle.currentTitle == "O" && right_middle.currentTitle == "O" {
             setBackgroundOfWinnerButtons(left_middle, center_middle, right_middle)
+            showWhoWon(.Circle)
         }
         
         if left_down.currentTitle == "X" && center_down.currentTitle == "X" && right_down.currentTitle == "X" {
             setBackgroundOfWinnerButtons(left_down, center_down, right_down)
+            showWhoWon(.Cross)
         } else if left_down.currentTitle == "O" && center_down.currentTitle == "O" && right_down.currentTitle == "O" {
             setBackgroundOfWinnerButtons(left_down, center_down, right_down)
+            showWhoWon(.Circle)
         }
         
         if left_down.currentTitle == "X" && left_middle.currentTitle == "X" && left_up.currentTitle == "X" {
             setBackgroundOfWinnerButtons(left_down, left_middle, left_up)
+            showWhoWon(.Cross)
         } else if left_down.currentTitle == "O" && left_middle.currentTitle == "O" && left_up.currentTitle == "O" {
             setBackgroundOfWinnerButtons(left_down, left_middle, left_up)
+            showWhoWon(.Circle)
         }
         
         if center_down.currentTitle == "X" && center_middle.currentTitle == "X" && center_up.currentTitle == "X" {
             setBackgroundOfWinnerButtons(center_down, center_middle, center_up)
+            showWhoWon(.Cross)
         } else if center_down.currentTitle == "O" && center_middle.currentTitle == "O" && center_up.currentTitle == "O" {
             setBackgroundOfWinnerButtons(center_down, center_middle, center_up)
+            showWhoWon(.Circle)
         }
         
         if right_up.currentTitle == "X" && right_down.currentTitle == "X" && right_middle.currentTitle == "X" {
             setBackgroundOfWinnerButtons(right_up, right_down, right_middle)
+            showWhoWon(.Cross)
         } else if right_up.currentTitle == "O" && right_down.currentTitle == "O" && right_middle.currentTitle == "O" {
             setBackgroundOfWinnerButtons(right_up, right_down, right_middle)
+            showWhoWon(.Circle)
         }
         
         if left_up.currentTitle == "X" && center_middle.currentTitle == "X" && right_down.currentTitle == "X" {
             setBackgroundOfWinnerButtons(left_up, center_middle, right_down)
+            showWhoWon(.Cross)
         } else if left_up.currentTitle == "O" && center_middle.currentTitle == "O" && right_down.currentTitle == "O" {
             setBackgroundOfWinnerButtons(left_up, center_middle, right_down)
+            showWhoWon(.Circle)
         }
         
         if left_down.currentTitle == "X" && center_middle.currentTitle == "X" && right_up.currentTitle == "X" {
             setBackgroundOfWinnerButtons(left_down, center_middle, right_up)
+            showWhoWon(.Cross)
         } else if left_down.currentTitle == "O" && center_middle.currentTitle == "O" && right_up.currentTitle == "O" {
             setBackgroundOfWinnerButtons(left_down, center_middle, right_up)
+            showWhoWon(.Circle)
         }
     }
     
@@ -200,6 +214,7 @@ class GameController: UIViewController {
         currentTypeOfMove = .Circle
         
         eneblingButtons()
+        hideWinnerAnimation()
     }
     
     func resetButtonsTitle() {
@@ -212,6 +227,35 @@ class GameController: UIViewController {
         right_up.setTitle("", forState: .Normal)
         right_middle.setTitle("", forState: .Normal)
         right_down.setTitle("", forState: .Normal)
+    }
+    
+    func showWhoWon(SymbolofWonPlayer: MoveType) {
+        if SymbolofWonPlayer == .Circle {
+            winner_text.text = "Wins O!"
+            showWinnerAnimation()
+        } else if SymbolofWonPlayer == .Cross {
+            winner_text.text = "Wins X!"
+            showWinnerAnimation()
+        }
+    }
+    
+    func showWinnerAnimation() {
+        UIView.animateWithDuration(0.5, animations: {
+            self.winner_text.alpha = CGFloat(1.0)
+        })
+    }
+    
+    func hideWinnerAnimation() {
+        UIView.animateWithDuration(0.5, animations: {
+            self.winner_text.alpha = CGFloat(0.0)
+        })
+    }
+    
+    
+//  Override functions
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        resetButtonsTitle()
     }
     
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class GameController: UIViewController {
     
@@ -17,6 +18,7 @@ class GameController: UIViewController {
     }
     
     var currentTypeOfMove = MoveType.Circle
+    let sounds = Sounds()
     
 //  The variables with the buttons of game
     @IBOutlet weak var left_up: UIButton!
@@ -93,8 +95,10 @@ class GameController: UIViewController {
     func checkArea(ClickedButton: UIButton) {
         if ClickedButton.currentTitle == "" {
             showSymbolOfMove(ClickedButton)
+            sounds.playButtonDeep()
         } else {
             print("This area is already taken")
+            sounds.playErrorClick()
         }
     }
     
@@ -217,6 +221,8 @@ class GameController: UIViewController {
         
         eneblingButtons()
         hideWinnerAnimation()
+        sounds.playButtonDeep()
+        
     }
     
     func resetButtonsTitle() {
@@ -239,6 +245,7 @@ class GameController: UIViewController {
             winner_text.text = "Wins X!"
             showWinnerAnimation()
         }
+        sounds.playWinnerSong()
     }
     
     func showWinnerAnimation() {

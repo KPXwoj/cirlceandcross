@@ -102,7 +102,9 @@ class GameController: UIViewController {
 //  Sets background for winner areas
     func setBackgroundOfWinnerButtons(WonButtons: UIButton ...) {
         for button in WonButtons {
-            button.backgroundColor = UIColor.greenColor()
+            UIView.animateWithDuration(0.5, delay: 0, options: .CurveEaseInOut, animations: {
+                button.backgroundColor = UIColor.greenColor()
+            }, completion: nil)
         }
         disabledButtons()
     }
@@ -240,15 +242,13 @@ class GameController: UIViewController {
     }
     
     func showWinnerAnimation() {
-        UIView.animateWithDuration(0.5, animations: {
+        UIView.animateWithDuration(0.5, delay: 0, options: .CurveEaseInOut, animations: {
             self.winner_text.alpha = CGFloat(1.0)
-        })
+        }, completion: nil)
     }
     
     func hideWinnerAnimation() {
-        UIView.animateWithDuration(0.5, animations: {
-            self.winner_text.alpha = CGFloat(0.0)
-        })
+        self.winner_text.alpha = CGFloat(0.0)
     }
     
     

@@ -15,26 +15,38 @@ class SettingsController: UITableViewController {
     @IBOutlet weak var darkMode_control: UISwitch!
     
     var settingsRef = Settings()
-    var currentSettings: [String: Bool] = [:]
     
     
 //  Override functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currentSettings = ["darkMode": settingsRef.darkMode,"music": settingsRef.music]
+        let isMusicValue = PlistManager.sharedInstance.getValueForKey("isMusic")!
+        let isDarkModeValue = PlistManager.sharedInstance.getValueForKey("isDarkMode")!
+        if isMusicValue as! NSObject == false {
+            print("Music value is false")
+            music_control.setOn(false, animated: true)
+        } else {
+            print("Music value is true")
+            music_control.setOn(true, animated: true)
+        }
+        if isDarkModeValue as! NSObject == false {
+            print("Dark Mode value is false")
+            darkMode_control.setOn(false, animated: true)
+        } else {
+            print("Dark Mode value is false")
+            darkMode_control.setOn(true, animated: true)
+        }
         
-        // Set setting values
-        darkMode_control.setOn(currentSettings["darkMode"]!, animated: true)
-        music_control.setOn(currentSettings["music"]!, animated: true)
 
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "saveSettingsSegue" {
             if segue.destinationViewController is GameController {
-                settingsRef.saveSettigns(darkMode_control.on, music: music_control.on)
                 print("save clicked")
+                PlistManager.sharedInstance.saveValue(music_control.on, forKey: "isMusic")
+                PlistManager.sharedInstance.saveValue(darkMode_control.on, forKey: "isDarkMode")
             } else {
                 print("Error. Invalid controller")
             }
@@ -42,7 +54,7 @@ class SettingsController: UITableViewController {
         
         if segue.identifier == "cancelSettingsSegue" {
             if segue.destinationViewController is GameController {
-                settingsRef.saveSettigns(currentSettings["darkMode"]!, music: currentSettings["music"]!)
+                
                 print("cancel clicked")
             } else {
                 print("Error. Invalid controller")

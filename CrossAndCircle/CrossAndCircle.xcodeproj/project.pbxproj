@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		D13343851D3EA85500A42C64 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13343841D3EA85500A42C64 /* SettingsController.swift */; };
 		D13343891D3EAB8D00A42C64 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13343881D3EAB8D00A42C64 /* Settings.swift */; };
+		D133438B1D3F72F400A42C64 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = D133438A1D3F72F400A42C64 /* settings.plist */; };
+		D133438D1D3F797900A42C64 /* PlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133438C1D3F797900A42C64 /* PlistManager.swift */; };
 		D1E595DB1D3D2225009FF796 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E595DA1D3D2225009FF796 /* AppDelegate.swift */; };
 		D1E595DD1D3D2225009FF796 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E595DC1D3D2225009FF796 /* ViewController.swift */; };
 		D1E595E01D3D2225009FF796 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1E595DE1D3D2225009FF796 /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		D13343841D3EA85500A42C64 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		D13343881D3EAB8D00A42C64 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		D133438A1D3F72F400A42C64 /* settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settings.plist; sourceTree = "<group>"; };
+		D133438C1D3F797900A42C64 /* PlistManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistManager.swift; sourceTree = "<group>"; };
 		D1E595D71D3D2225009FF796 /* CrossAndCircle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrossAndCircle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1E595DA1D3D2225009FF796 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1E595DC1D3D2225009FF796 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,7 +48,9 @@
 		D13343861D3EAB7700A42C64 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D133438C1D3F797900A42C64 /* PlistManager.swift */,
 				D13343881D3EAB8D00A42C64 /* Settings.swift */,
+				D133438A1D3F72F400A42C64 /* settings.plist */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -157,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1E595E51D3D2225009FF796 /* LaunchScreen.storyboard in Resources */,
+				D133438B1D3F72F400A42C64 /* settings.plist in Resources */,
 				D1E595E21D3D2225009FF796 /* Assets.xcassets in Resources */,
 				D1E595E01D3D2225009FF796 /* Main.storyboard in Resources */,
 			);
@@ -169,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D133438D1D3F797900A42C64 /* PlistManager.swift in Sources */,
 				D13343851D3EA85500A42C64 /* SettingsController.swift in Sources */,
 				D1E595DD1D3D2225009FF796 /* ViewController.swift in Sources */,
 				D1E595ED1D3D4611009FF796 /* GameController.swift in Sources */,

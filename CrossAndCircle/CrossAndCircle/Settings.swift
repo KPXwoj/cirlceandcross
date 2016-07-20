@@ -13,16 +13,13 @@ class Settings {
     var darkMode: Bool = false
     var music: Bool = true
     
+    func getSettings() -> [String: Bool] {
+        let settings = ["darkMode": self.darkMode, "music": self.music]
+        return settings
+    }
     
     func saveSettigns(darkMode: Bool, music: Bool) {
-        print("Dark Mode: \(self.darkMode)")
-        print("Music: \(self.music)")
-        
-        self.darkMode = darkMode
-        self.music = music
-        
-        print("Dark Mode: \(self.darkMode)")
-        print("Music: \(self.music)")
+
     }
     
 }

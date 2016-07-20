@@ -30,30 +30,43 @@ class Sounds {
         return audioPlayer
     }
     
-    func playButtonDeep() {
+    func playButtonDeep(Mute: Bool) {
         if let buttonDeep = setupAudioPlayerWithFile("click", Type: "mp3") {
             self.buttonDeep = buttonDeep
         }
         
-        buttonDeep?.volume = Float(0.1)
+        if Mute {
+            buttonDeep?.volume = Float(0.1)
+        } else {
+            buttonDeep?.volume = Float(0.0)
+        }
+        
         buttonDeep?.play()
     }
     
-    func playErrorClick() {
+    func playErrorClick(Mute: Bool) {
         if let errorClick = setupAudioPlayerWithFile("error", Type: "wav") {
             self.errorClick = errorClick
         }
         
-        errorClick?.volume = Float(0.1)
+        if Mute {
+            errorClick?.volume = Float(0.1)
+        } else {
+            errorClick?.volume = Float(0.0)
+        }
         errorClick?.play()
     }
     
-    func playWinnerSong() {
+    func playWinnerSong(Mute: Bool) {
         if let winnerSong = setupAudioPlayerWithFile("winner", Type: "wav") {
             self.winnerSong = winnerSong
         }
         
-        winnerSong?.volume = Float(0.3)
+        if Mute {
+            winnerSong?.volume = Float(0.3)
+        } else {
+            winnerSong?.volume = Float(0.0)
+        }
         winnerSong?.play()
     }
     

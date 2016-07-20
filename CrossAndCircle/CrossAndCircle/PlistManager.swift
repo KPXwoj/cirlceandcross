@@ -1,11 +1,3 @@
-//
-//  PlistManager.swift
-//  PlistManagerExample
-//
-//  Created by SANDOR NAGY on 27/05/16.
-//  Copyright © 2016 Rebeloper. All rights reserved.
-//
-
 import Foundation
 
 let plistFileName:String = "settings"

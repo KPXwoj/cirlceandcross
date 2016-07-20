@@ -18,6 +18,7 @@ class GameController: UIViewController {
     }
     
     var currentTypeOfMove = MoveType.Circle
+    var isSoundsMute: Bool = false
     let sounds = Sounds()
     
 //  The variables with the buttons of game
@@ -95,10 +96,10 @@ class GameController: UIViewController {
     func checkArea(ClickedButton: UIButton) {
         if ClickedButton.currentTitle == "" {
             showSymbolOfMove(ClickedButton)
-            sounds.playButtonDeep()
+            sounds.playButtonDeep(isSoundsMute)
         } else {
             print("This area is already taken")
-            sounds.playErrorClick()
+            sounds.playErrorClick(isSoundsMute)
         }
     }
     
@@ -221,7 +222,7 @@ class GameController: UIViewController {
         
         eneblingButtons()
         hideWinnerAnimation()
-        sounds.playButtonDeep()
+        sounds.playButtonDeep(isSoundsMute)
         
     }
     
@@ -245,7 +246,7 @@ class GameController: UIViewController {
             winner_text.text = "Wins X!"
             showWinnerAnimation()
         }
-        sounds.playWinnerSong()
+        sounds.playWinnerSong(isSoundsMute)
     }
     
     func showWinnerAnimation() {
@@ -263,6 +264,11 @@ class GameController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         resetButtonsTitle()
+        
+        isSoundsMute = Bool(PlistManager.sharedInstance.getValueForKey("isMusic")! as! NSNumber)
+        
+        
+        
     }
     
 }

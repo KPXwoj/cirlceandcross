@@ -12,12 +12,15 @@ import AVFoundation
 class ViewController: UIViewController {
     
     let sounds = Sounds()
+    var isSoundsMute: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         navigationItem.hidesBackButton = true
+        
+        isSoundsMute = Bool(PlistManager.sharedInstance.getValueForKey("isMusic")! as! NSNumber)
         
     }
 
@@ -27,7 +30,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func startGameButtonClicked(sender: AnyObject) {
-        sounds.playButtonDeep()
+        sounds.playButtonDeep(isSoundsMute)
     }
 
 }

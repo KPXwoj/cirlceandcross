@@ -12,8 +12,7 @@ class SettingsController: UITableViewController {
     
     // Control State
     @IBOutlet weak var music_control: UISwitch!
-    @IBOutlet weak var darkMode_control: UISwitch!
-    
+
     var settingsRef = Settings()
     
     
@@ -22,7 +21,6 @@ class SettingsController: UITableViewController {
         super.viewDidLoad()
         
         let isMusicValue = PlistManager.sharedInstance.getValueForKey("isMusic")!
-        let isDarkModeValue = PlistManager.sharedInstance.getValueForKey("isDarkMode")!
         if isMusicValue as! NSObject == false {
             print("Music value is false")
             music_control.setOn(false, animated: true)
@@ -30,14 +28,6 @@ class SettingsController: UITableViewController {
             print("Music value is true")
             music_control.setOn(true, animated: true)
         }
-        if isDarkModeValue as! NSObject == false {
-            print("Dark Mode value is false")
-            darkMode_control.setOn(false, animated: true)
-        } else {
-            print("Dark Mode value is false")
-            darkMode_control.setOn(true, animated: true)
-        }
-        
 
     }
     
@@ -46,7 +36,6 @@ class SettingsController: UITableViewController {
             if segue.destinationViewController is GameController {
                 print("save clicked")
                 PlistManager.sharedInstance.saveValue(music_control.on, forKey: "isMusic")
-                PlistManager.sharedInstance.saveValue(darkMode_control.on, forKey: "isDarkMode")
             } else {
                 print("Error. Invalid controller")
             }
